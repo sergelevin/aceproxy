@@ -16,19 +16,19 @@ What is this plugin for?
 '''
 __author__ = 'miltador'
 
-# Insert your email on torrent-tv.ru here
+# Insert your email on ttv.run here
 email = 're.place@me'
 
 # Insert your torrent-tv account password
 password = 'ReplaceMe'
 
-# Generate logo with full path (e.g. http://torrent-tv.ru/uploads/ornzQpk6WCW6xk0lyBhlwqH8u2QyU7.png)
+# Generate logo with full path (e.g. http://ttv.run/uploads/ornzQpk6WCW6xk0lyBhlwqH8u2QyU7.png)
 # or put only the logo file name (e.g. ornzQpk6WCW6xk0lyBhlwqH8u2QyU7.png)
 # This option is only for m3u playlists.
 fullpathlogo = True
 
 # TV Guide URL
-tvgurl = 'http://api.torrent-tv.ru/ttv.xmltv.xml.gz'
+tvgurl = 'http://api.ttv.run/ttv.xmltv.xml.gz'
 
 # Shift the TV Guide time to the specified number of hours
 tvgshift = 0

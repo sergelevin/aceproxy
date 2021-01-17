@@ -1,5 +1,5 @@
 '''
-Torrent-tv.ru Playlist Downloader Plugin
+ttv.run Playlist Downloader Plugin
 http://ip:port/ttvplaylist
 '''
 import re

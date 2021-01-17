@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 
 '''
-Torrent-tv.ru Playlist Downloader Plugin configuration file
+ttv.run Playlist Downloader Plugin configuration file
 '''
 
-# Insert your Torrent-tv.ru playlist URL here
+# Insert your ttv.run playlist URL here
 url = ''
 
 # TV Guide URL
-tvgurl = 'http://api.torrent-tv.ru/ttv.xmltv.xml.gz'
+tvgurl = 'http://api.ttv.run/ttv.xmltv.xml.gz'
 
 # Shift the TV Guide time to the specified number of hours
 tvgshift = 0
@@ -20,7 +20,7 @@ tvgshift = 0
 updateevery = 0
 
 # Channel logos mapping
-logobase = 'http://torrent-tv.ru/uploads/'
+logobase = 'http://ttv.run/uploads/'
 logomap = {
     u'1 HD': logobase + 'FtLnmUwjG18XJFEKYvLKjwUq1gwHVZ.png',
     u'1 Балтийский Музыкальный': logobase + 'wLtopqioazWFEqSAGxC1D8ybC0KvHq.png',

@@ -109,7 +109,7 @@ class P2pproxy(AceProxyPlugin):
                     cid = channel.getAttribute('id')
                     logo = channel.getAttribute('logo')
                     if config.fullpathlogo:
-                        logo = 'http://torrent-tv.ru/uploads/' + logo
+                        logo = 'http://ttv.run/uploads/' + logo
 
                     fields = {'name': name, 'id': cid, 'url': cid, 'group': group, 'logo': logo}
                     fields['tvgid'] = config.tvgid %fields
@@ -232,7 +232,7 @@ class P2pproxy(AceProxyPlugin):
                     if channel_name != '':
                         name = '(' + channel_name + ') ' + name
                     if logo != '' and config.fullpathlogo:
-                        logo = 'http://torrent-tv.ru/uploads/' + logo
+                        logo = 'http://ttv.run/uploads/' + logo
 
                     playlistgen.addItem({'name': name, 'url': record_id, 'logo': logo})
 
