@@ -8,6 +8,7 @@ __author__ = 'miltador'
 import urllib2
 import socket
 import xml.dom.minidom as dom
+import uuid
 
 
 class TorrentTvApiException(Exception):
@@ -45,8 +46,10 @@ class TorrentTvApi(object):
         :return: unique session string
         """
 
+        guid = str(uuid.uuid1())
+        guid = guid.replace('-', '')
         xmlresult = TorrentTvApi._result(
-            'v2_auth.php?username=' + email + '&password=' + password + '&application=tsproxy')
+            'v3/auth.php?username=' + email + '&password=' + password + '&application=tsproxy&guid=' + guid)
         if raw:
             return xmlresult
         res = TorrentTvApi._check(xmlresult)
@@ -65,7 +68,7 @@ class TorrentTvApi(object):
         :return: translations list
         """
         xmlresult = TorrentTvApi._result(
-            'v2_alltranslation.php?session=' + session + '&type=' + translation_type)
+            'v3/translation_list.php?session=' + session + '&type=' + translation_type)
         if raw:
             return xmlresult
         res = TorrentTvApi._check(xmlresult)
@@ -84,7 +87,7 @@ class TorrentTvApi(object):
         :return: records list
         """
         xmlresult = TorrentTvApi._result(
-            'v2_arc_getrecords.php?session=' + session + '&channel_id=' + channel_id + '&date=' + date)
+            'v3/arc_records.php?session=' + session + '&epg_id=' + channel_id + '&date=' + date)
         if raw:
             return xmlresult
         res = TorrentTvApi._check(xmlresult)
@@ -101,7 +104,7 @@ class TorrentTvApi(object):
         :return: archive channels list
         """
         xmlresult = TorrentTvApi._result(
-            'v2_arc_getchannels.php?session=' + session)
+            'v3/arc_list.php?session=' + session)
         if raw:
             return xmlresult
         res = TorrentTvApi._check(xmlresult)
@@ -118,7 +121,7 @@ class TorrentTvApi(object):
         :return: type of stream and source
         """
         xmlresult = TorrentTvApi._result(
-            'v2_get_stream.php?session=' + session + '&channel_id=' + channel_id)
+            'v3/translation_stream.php?session=' + session + '&channel_id=' + channel_id)
         res = TorrentTvApi._check(xmlresult)
         stream_type = res.getElementsByTagName('type')[0].firstChild.data
         source = res.getElementsByTagName('source')[0].firstChild.data
@@ -134,7 +137,7 @@ class TorrentTvApi(object):
         :return: type of stream and source
         """
         xmlresult = TorrentTvApi._result(
-            'v2_arc_getstream.php?session=' + session + '&record_id=' + record_id)
+            'v3/arc_stream.php?session=' + session + '&record_id=' + record_id)
         res = TorrentTvApi._check(xmlresult)
         stream_type = res.getElementsByTagName('type')[0].firstChild.data
         source = res.getElementsByTagName('source')[0].firstChild.data
