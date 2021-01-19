@@ -170,7 +170,8 @@ class TorrentTvApi(object):
         :raise: TorrentTvApiException
         """
         try:
-            result = urllib2.urlopen('http://api.ttv.run/' + request + '&typeresult=xml', timeout=10).read()
+            http_request = urllib2.Request('http://api.ttv.run/' + request + '&typeresult=xml', headers = {'User-Agent': 'Aceproxy'})
+            result = urllib2.urlopen(http_request, timeout=10).read()
             return result
         except (urllib2.URLError, socket.timeout) as e:
             raise TorrentTvApiException('Error happened while trying to access API: ' + repr(e))

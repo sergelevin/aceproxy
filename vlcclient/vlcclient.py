@@ -4,7 +4,11 @@ Minimal VLC VLM client for AceProxy. Client class.
 
 import gevent
 import gevent.event
-import gevent.coros
+try:
+    import gevent.coros
+except ImportError:
+    import gevent.lock
+    gevent.coros = gevent.lock
 import telnetlib
 import logging
 from vlcmessages import *

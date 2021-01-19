@@ -105,7 +105,7 @@ class P2pproxy(AceProxyPlugin):
                         continue
 
                     name = channel.getAttribute('name')
-                    group = TorrentTvApi.CATEGORIES[int(group_id)].decode('utf-8')
+                    group = TorrentTvApi.CATEGORIES.get(int(group_id), 'Group ' + str(group_id)).decode('utf-8')
                     cid = channel.getAttribute('id')
                     logo = channel.getAttribute('logo')
                     if config.fullpathlogo:
